@@ -1,0 +1,75 @@
+h1. 0.5.3 (3/5/2009)
+
+* Clearance now works with (and requires) Shoulda 2.10.0. (Mark Cornick, Joe
+Ferris, Dan Croak)
+* Prefer flat over nested contexts in sessions_controller_test. (Joe Ferris,
+Dan Croak)
+
+h1. 0.5.2 (3/2/2009)
+
+* Fixed last remaining errors in Rails 2.3 tests. Now fully compatible. (Joe
+Ferris, Dan Croak)
+
+h1. 0.5.1 (2/27/2009)
+
+* [#46] A user with unconfirmed email who resets password now confirms email.
+(Marcel Görner)
+* Refactored user_from_cookie, user_from_session, User#authenticate to use
+more direct return code instead of ugly, harder to read ternary. (Dan Croak)
+* Switch order of cookies and sessions to take advantage of Rails 2.3's "Rack-based lazy-loaded sessions":http://is.gd/i23E. (Dan Croak)
+* Altered generator to interact with application_controller.rb instead of
+application.rb in Rails 2.3 apps. (Dan Croak)
+* [#42] Bug fix. Rack-based session change altered how to test remember me
+cookie. (Mihai Anca)
+
+h2. 0.5.0 (2/27/2009)
+
+* Fixed problem with Cucumber features. (Dan Croak)
+* Fixed mising HTTP fluency use case. (Dan Croak)
+* Refactored User#update_password to take just parameters it needs. (Dan
+Croak)
+* Refactored User unit tests to be more readable. (Dan Croak)
+
+h2. 0.4.9 (2/20/2009)
+
+* Protect passwords & confirmations actions with forbidden filters. (Dan Croak)
+* Return 403 Forbidden status code in those cases. (Tim Pope)
+* Test 403 Forbidden status code in Cucumber feature. (Dan Croak, Joe Ferris)
+* Raise custom ActionController::Forbidden error internally. (Joe Ferris, Mike Burns, Jason Morrison)
+* Test ActionController::Forbidden error is raised in functional test. (Joe Ferris, Mike Burns, Dan Croak)
+* [#45] Fixed bug that allowed anyone to edit another user's password (Marcel Görner)
+* Required Factory Girl >= 1.2.0. (Dan Croak)
+
+h2. 0.4.8 (2/16/2009)
+
+* Added support paths for Cucumber. (Ben Mabey)
+* Added documentation for the flash. (Ben Mabey)
+* Generators require "test_helper" instead of File.join. for rr compatibility. (Joe Ferris)
+* Removed interpolated email address from flash message to make i18n easier. (Bence Nagy)
+* Standardized flash messages that refer to email delivery. (Dan Croak)
+
+h2. 0.4.7 (2/12/2009)
+
+* Removed Clearance::Test::TestHelper so there is one less setup step. (Dan Croak)
+* All test helpers now in shoulda_macros. (Dan Croak)
+
+h2. 0.4.6 (2/11/2009)
+
+* Made the modules behave like mixins again. (hat-tip Eloy Duran)
+* Created Actions and PrivateMethods modules on controllers for future RDoc reasons. (Dan Croak, Joe Ferris)
+
+h2. 0.4.5 (2/9/2009)
+
+* [#43] Removed email downcasing because local-part is case sensitive per RFC5321. (Dan Croak)
+* [#42] Removed dependency on Mocha. (Dan Croak)
+* Required Shoulda >= 2.9.1. (Dan Croak)
+* Added password reset feature to clearance_features generator. (Eugene Bolshakov, Dan Croak)
+* Removed unnecessary session[:salt]. (Dan Croak)
+* [#41] Only store location for session[:return_to] for GET requests. (Dan Croak)
+* Audited "sign up" naming convention. "Register" had slipped in a few places. (Dan Croak)
+* Switched to SHA1 encryption. Cypher doesn't matter much for email confirmation, password reset. Better to have shorter hashes in the emails for clients who line break on 72 chars. (Dan Croak)
+
+h2. 0.4.4 (2/2/2009)
+
+* Added a generator for Cucumber features. (Joe Ferris, Dan Croak)
+* Standarized naming for "Sign up," "Sign in," and "Sign out". (Dan Croak) 
