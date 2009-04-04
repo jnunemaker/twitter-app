@@ -17,7 +17,13 @@ Rails::Initializer.run do |config|
     :source => 'http://gems.github.com',
     :version => '2.3.8'
   
+  config.gem 'twitter',
+    :lib => 'twitter',
+    :version => '0.5.0'
+  
   config.time_zone = 'UTC'
 end
 
 DO_NOT_REPLY = "donotreply@example.com"
+
+ConsumerConfig = YAML.load(File.read(Rails.root + 'config' + 'consumer.yml'))
