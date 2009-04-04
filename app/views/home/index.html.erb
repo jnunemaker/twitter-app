@@ -1,9 +1,9 @@
-<h2>Yo!</h2>
-
 <%- if current_user.authorized? -%>
+  <div id="statuses">
   <%- for tweet in current_user.client.friends_timeline -%>
-    <%= debug tweet %><br /><br />
+    <%= render :partial => 'statuses/status', :object => tweet %>
   <%- end -%>
+  </div>
 <%- else -%>
   <p>We need you to authorize this app. <%= link_to 'Authorize', new_authorization_url %></p>
 <%- end -%>

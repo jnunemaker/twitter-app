@@ -1,0 +1,14 @@
+<div id="status_<%= status.id %>" class="status">
+  <div class="info">
+    <%= link_to image_tag(status.user.profile_image_url), '#', :class => 'profile_image' %>
+    
+    <p>
+      <%= link_to status.user.screen_name, user_url(status.user) %><br />
+      <%= pretty_datetime Time.parse(status.created_at) %>
+    </p>
+  </div>
+
+  <div class="text">
+    <%= linkup_replies(auto_link(status.text)) %>
+  </div>
+</div>
