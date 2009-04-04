@@ -1,0 +1,3 @@
+= twitter app
+
+Twitter app is a basic rails 2.3 application that shows how to use the updated twitter gem to handle oauth stuff. It is really basic, but over time I'll keep pimping it out until it is my primary twitter client (at least that is the goal).
