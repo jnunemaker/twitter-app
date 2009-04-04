@@ -19,8 +19,8 @@
   
   div.flash                         {margin:20px 0 0; border:1px solid #ccc; background:#eee; padding:7px 13px;}
     div.flash p                     {margin:0; padding:0;}
-    div.error                       {border:1px solid #900; background:#F6E8E8;}
-    div.notice                      {border:1px solid #090; background:#E8F6E8;}
+    div.error                       {border:1px solid #C77474; background:#F6E8E8;}
+    div.notice                      {border:1px solid #74C774; background:#E8F6E8;}
   
   div.status                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
     div.info                        {float:left; display:inline; width:250px; margin:0; font-size:11px; text-align:right;}
