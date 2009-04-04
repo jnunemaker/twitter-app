@@ -1,0 +1,73 @@
+@media screen, projection {  
+  *{margin:0; padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}caption,th{text-align:left;}abbr,acronym {border:0;font-variant:normal;}sup {vertical-align:text-top;}sub {vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}h1,h2,h3,h4,h5,h6,strong{font-weight:bold;}em{font-weight:italic;}ul,ol{margin:0 0 20px 25px;}p{margin:0 0 20px;}
+  
+  /* Redeclarations */
+  body                              {background:#eee; color:#333; font:13px/1.4 Helvetica, Arial, sans-serif;}
+  h2                                {clear:left; font-size:18px; line-height:18px; padding:30px 0 10px;}
+  a:link                            {color:#090;}
+  a:visited                         {color:#8BD18B;}
+  a:hover                           {text-decoration:none; background:#090; color:#fff;}
+  form ul                           {margin:0; padding:0;}
+  form ul li                        {list-style-type:none; margin:0 0 13px; padding:0;}
+  form ul li label                  {display:block; margin:0 0 3px;}
+  form ul li.checkbox label         {display:inline;}
+  textarea                          {width:550px;}
+  
+  /* Chunks */
+  a.icon                            {display:inline-block; background-color:#999; background-image:url(images/bg_rounded.gif); background-repeat:no-repeat; width:16px; height:16px;}
+  a.icon img                        {width:16px; height:16px; margin:0; padding:0;}
+  
+  div.flash                         {margin:20px 0 0; border:1px solid #ccc; background:#eee; padding:7px 13px;}
+    div.flash p                     {margin:0; padding:0;}
+    div.error                       {border:1px solid #900; background:#F6E8E8;}
+    div.notice                      {border:1px solid #090; background:#E8F6E8;}
+  
+  div.status                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
+    div.info                        {float:left; display:inline; width:250px; margin:0; font-size:11px; text-align:right;}
+    div.info a.profile_image        {float:right; display:block; margin:0 30px;}
+    div.info a.profile_image img    {float:left; width:48px; height:48px; border:1px solid #ddd; padding:1px;}
+    div.info a.profile_image:hover  {background:none;}
+    div.info a.profile_image:hover img {border-color:#090;}
+    div.info span.date              {color:#aaa;}
+    div.text                        {float:left; display:inline; width:300px;}
+  
+  div.profile                       {float:left; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
+    div.profile a.icon              {float:right;}
+    div.profile p                   {margin:0; padding:0;}
+    div.profile img.profile_image   {float:left; display:inline; margin:0 20px 20px 0; padding:1px; width:48px; height:48px; border:1px solid #eee;}
+    div.profile h2                  {clear:none; background:none; margin:0 0 3px; padding:0; font-size:15px; line-height:15px;}
+    div.profile p.counts            {color:#999; margin:0 0 5px; font-size:12px; line-height:12px;}
+    div.profile p.other             {font-size:12px; line-height:12px;}
+    div.profile p.description       {clear:left; color:#666;}
+  
+  div.pagination                    {float:left; width:550px; margin:15px 0; text-align:center;}
+  div.pagination a                  {padding:3px 7px; color:#46B546; text-decoration:none;}
+  div.pagination a:hover            {color:#fff; background:#090;}
+  div.pagination span.disabled      {padding:3px 7px; text-transform:lowercase; color:#ccc;}
+  div.pagination span.current       {padding:3px 5px; font-weight:bold;}
+  
+  /* Layout */
+  #header                           {float:left; width:100%; padding:8px 0; background:#333; color:#fff;}
+  #header_inner                     {width:550px; margin:0 auto;}
+    #header a                       {color:#fff; text-decoration:none; background:none;}
+    #header a:hover                 {text-decoration:underline;}
+    #header h3                      {float:left; display:inline; margin:0; padding:0; line-height:12px;}
+    #header h3 a                    {display:block; font-size:12px;}
+    #header p                       {float:left; display:inline; margin:0; padding:0 0 0 13px; font-size:11px; color:#ccc; line-height:12px;}
+    #header p a                     {color:#ccc;}
+    #header div.actions             {float:right; margin:-7px 0;}
+    #header div.actions a           {float:left; display:block; margin:0 0 0 10px; padding:5px;}
+    #header div.actions a:hover     {background:#444;}
+    #header div.actions img         {float:right;}
+                                    
+  #content                          {float:left; display:inline; width:100%; background:#fff;}
+    #content_inner                  {width:550px; margin:0 auto;}
+    
+  #footer                           {float:left; display:inline; width:100%; padding:30px 0 0; background:#eee; border-top:1px solid #ccc;}
+    #footer_inner                   {width:550px; margin:0 auto;}
+    #footer div.column              {float:left; display:inline; width:110px; margin:0 30px 30px 0;}
+    #footer div.column ul           {margin:0; padding:0;}
+    #footer div.column ul li        {margin:0 0 3px; padding:0; list-style-type:none;}
+    #footer div.column ul li a      {font-size:12px; color:#666; text-decoration:none;}
+    #footer div.column ul li a:hover{background:none; text-decoration:underline;}
+}

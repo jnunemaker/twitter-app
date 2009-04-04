@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Twitter App</title>
+    <%= stylesheet_link_tag 'common' %>
+</head>
+<body>
+
+<div id="header">
+  <div id="header_inner">
+    <h3><%= link_to "Twitter App", root_url %></h3>
+    <%- if signed_in? -%>
+      <div class="actions">
+        <%#= link_to image_tag('reload.gif'), '#', :id => 'refresh' %>
+      </div>
+      
+      <p>
+        Logged in as <%= current_user.email %>
+        <%= link_to 'Logout', session_url, :method => :delete %>?
+      </p>
+    <%- end -%>
+  </div>
+</div>
+
+<div id="content">
+  <div id="content_inner">    
+    <% flash.each do |key, value| -%>
+      <div class="flash <%= key %>">
+        <%= html_escape(value) %>
+      </div>
+    <% end -%>
+    
+    <%= yield %>
+  </div>
+</div>
+
+<div id="footer">
+  <div id="footer_inner">
+    <div class="column">
+      <!-- <ul>
+        <li><%= link_to 'Home', root_url %></li>
+      </ul> -->
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'jquery' %>
+<%= javascript_include_tag 'jquery.form.js' %>
+<%= javascript_include_tag 'application' %>
+</body>
+</html>

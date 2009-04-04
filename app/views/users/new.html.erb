@@ -1,6 +1,12 @@
 <h2>Sign up</h2>
 
 <% form_for @user do |form| %>
-  <%= render :partial => '/users/form', :object => form %>
-  <%= form.submit 'Sign up', :disable_with => 'Please wait...' %>
+  <%= form.error_messages %>
+  <ul>
+    <%= render :partial => '/users/form', :object => form %>
+    <li class="submit">
+      <%= form.submit 'Sign up', :disable_with => 'Please wait...' %> or
+      <%= link_to "Sign in", new_session_path %>
+    </li>
+  </ul>
 <% end %>

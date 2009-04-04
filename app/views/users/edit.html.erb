@@ -1,6 +1,11 @@
 <h2>Edit user information</h2>
 
 <% form_for @user do |form| %>
-  <%= render :partial => '/users/form', :object => form %>
-  <%= form.submit 'Update', :disable_with => 'Please wait...' %>
+  <%= form.error_messages %>
+  <ul>
+    <%= render :partial => '/users/form', :object => form %>
+    <li class="submit">
+      <%= form.submit 'Update', :disable_with => 'Please wait...' %>
+    </li>
+  </ul>
 <% end %>

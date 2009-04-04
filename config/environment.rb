@@ -12,6 +12,11 @@ Rails::Initializer.run do |config|
     :source  => 'http://gems.github.com', 
     :version => '0.5.3'
   
+  config.gem 'mislav-will_paginate', 
+    :lib => 'will_paginate',
+    :source => 'http://gems.github.com',
+    :version => '2.3.8'
+  
   config.time_zone = 'UTC'
 end
 

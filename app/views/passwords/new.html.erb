@@ -5,11 +5,14 @@
 </p>
 
 <% form_for :password, :url => passwords_path do |form| %>
-  <div class="text_field">
-    <%= form.label :email, "Email address" %>
-    <%= form.text_field :email %>
-  </div>
-  <div class="submit_field">
-    <%= form.submit "Reset password", :disable_with => "Please wait..." %>
-  </div>
+  <ul>
+    <li>
+      <%= form.label :email, "Email address" %>
+      <%= form.text_field :email %>
+    </li>
+    <li class="submit">
+      <%= form.submit "Reset password", :disable_with => "Please wait..." %> or 
+      <%= link_to 'Sign in', new_session_path %>
+    </li>
+  </ul>
 <% end %>

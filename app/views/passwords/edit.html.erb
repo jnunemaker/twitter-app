@@ -7,17 +7,19 @@
 <%= error_messages_for :user %>
 
 <% form_for(:user,
-            :url => user_password_path(@user, :token    => @user.token),
+            :url => user_password_path(@user, :token => @user.token),
             :html => { :method => :put }) do |form| %>
-  <div class="password_field">
-    <%= form.label :password, "Choose password" %>
-    <%= form.password_field :password %>
-  </div>
-  <div class="password_field">
-    <%= form.label :password_confirmation, "Confirm password" %>
-    <%= form.password_field :password_confirmation %>
-  </div>
-  <div class="submit_field">
-    <%= form.submit "Save this password", :disable_with => "Please wait..." %>
-  </div>
+  <ul>
+    <li>
+      <%= form.label :password, "Choose password" %>
+      <%= form.password_field :password %>
+    </li>
+    <li>
+      <%= form.label :password_confirmation, "Confirm password" %>
+      <%= form.password_field :password_confirmation %>
+    </li>
+    <li class="submit">
+      <%= form.submit "Save this password", :disable_with => "Please wait..." %>
+    </li>
+  </ul>
 <% end %>
