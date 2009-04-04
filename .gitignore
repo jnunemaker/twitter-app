@@ -4,3 +4,4 @@ tmp/*
 doc/*
 config/database.yml
 config/consumer.yml
+db/schema.rb

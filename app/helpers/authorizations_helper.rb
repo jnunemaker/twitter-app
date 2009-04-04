@@ -1,0 +1,2 @@
+module AuthorizationsHelper
+end
