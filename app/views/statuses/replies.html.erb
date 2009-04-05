@@ -1,5 +1,5 @@
 <div id="statuses">
-  <%- for tweet in @tweets -%>
+  <%- for tweet in @replies -%>
     <%= render :partial => 'statuses/status', :object => tweet %>
   <%- end -%>
 </div>

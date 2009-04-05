@@ -10,12 +10,13 @@
 
 <div id="header">
   <div id="header_inner">
-    <h3><%= link_to "Home", root_url %></h3>
-    <%- if signed_in? -%>
-      <p>
-        Logged in as <%= current_user.email %>
-        <%= link_to 'Logout', session_url, :method => :delete %>?
-      </p>
+    <h3><%= link_to "I'd Tweet That", root_url %></h3>
+    <%- if signed_in? -%>      
+      <ul id="nav">
+        <li><%= link_to 'Home', root_url %></li>
+        <li><%= link_to 'Replies', replies_statuses_url %></li>
+        <li><%= link_to 'Logout', session_url, :method => :delete %></li>
+      </ul>
     <%- end -%>
   </div>
 </div>

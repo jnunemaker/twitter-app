@@ -1,0 +1,4 @@
+<div class="pagination">
+  <%= link_to '&lt; Newer', {:page => (params[:page].to_i - 1)}, :class => 'newer' if params[:page] && (params[:page].to_i - 1) > 0 %>
+  <%= link_to 'Older &gt;', {:page => (params[:page].to_i + 1)}, :class => 'older' %>
+</div>

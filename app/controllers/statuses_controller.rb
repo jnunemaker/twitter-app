@@ -5,8 +5,10 @@ class StatusesController < ApplicationController
   def index
     params[:page] ||= 1
     @tweets = current_user.client.friends_timeline(:page => params[:page])
-    
-    params[:older] = params[:page].to_i + 1
-    params[:newer] = params[:page].to_i - 1
+  end
+  
+  def replies
+    params[:page] ||= 1
+    @replies = current_user.client.replies(:page => params[:page])
   end
 end
