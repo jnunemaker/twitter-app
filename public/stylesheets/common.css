@@ -16,6 +16,7 @@
   /* Chunks */
   a.icon                            {display:inline-block; background-color:#999; background-image:url(images/bg_rounded.gif); background-repeat:no-repeat; width:16px; height:16px;}
   a.icon img                        {width:16px; height:16px; margin:0; padding:0;}
+  a.icon:hover                      {background-color:#090;}
   
   div.flash                         {margin:10px 0 0 240px; padding:10px 20px; border:1px solid #ccc; background:#eee; line-height:1; font-size:12px;}
     div.error                       {border:1px solid #E3BEBE; background:#F6E8E8;}
@@ -27,6 +28,7 @@
     div.info a.profile_image img    {float:left; width:48px; height:48px; border:1px solid #ddd; padding:1px;}
     div.info a.profile_image:hover  {background:none;}
     div.info a.profile_image:hover img {border-color:#090;}
+    div.info p.who_when             {margin:0; padding:0;}
     div.info span.date              {color:#aaa;}
     div.text                        {float:left; display:inline; width:300px;}
   

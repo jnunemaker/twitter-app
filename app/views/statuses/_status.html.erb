@@ -3,9 +3,14 @@
   <div class="info">
     <%= link_to image_tag(user.profile_image_url), '#', :class => 'profile_image' %>
     
-    <p>
+    <p class="who_when">
       <%= link_to h(user.screen_name), user_url(user.screen_name) %><br />
       <%= pretty_datetime Time.parse(status.created_at) %>
+    </p>
+    
+    <p class="actions">
+      <%= link_to image_tag('mail.gif'), '#', :class => 'dm icon', :rel => h(user.screen_name), :title => "Direct Message #{h user.screen_name}" %>
+      <%= link_to image_tag('comment.gif'), '#', :class => 'reply icon', :rel => h(user.screen_name), :title => "Reply to #{h user.screen_name}" %>
     </p>
   </div>
 

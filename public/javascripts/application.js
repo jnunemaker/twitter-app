@@ -26,7 +26,7 @@ var forEach = function(object, block, context) {
   }
 };
 
-jQuery.extend(String.prototype, {  
+jQuery.extend(String.prototype, {
   databaseId: function() { return $.trim(this.split('_').last()); }
 });
 
@@ -49,5 +49,15 @@ jQuery(function($) {
   var allowed = parseInt(countdown.text());
   $('#text').keydown(function() {
     countdown.text(allowed - $(this).val().length);
+  });
+  
+  $('a.dm').click(function() {
+    window.scrollTo(0, 0);
+    $('#text').focus().val('d ' + $(this).attr('rel') + ' ');
+  });
+  
+  $('a.reply').click(function() {
+    window.scrollTo(0, 0);
+    $('#text').focus().val('@' + $(this).attr('rel') + ' ');
   });
 });
