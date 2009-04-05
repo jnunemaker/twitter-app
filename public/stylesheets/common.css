@@ -31,14 +31,14 @@
     div.info span.date              {color:#aaa;}
     div.text                        {float:left; display:inline; width:300px;}
   
-  div.profile                       {float:left; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
+  div.profile                       {float:left; width:550px; border-bottom:1px solid #eee; margin:0 0 0 170px; padding:15px 0;}
     div.profile a.icon              {float:right;}
     div.profile p                   {margin:0; padding:0;}
-    div.profile img.profile_image   {float:left; display:inline; margin:0 20px 20px 0; padding:1px; width:48px; height:48px; border:1px solid #eee;}
-    div.profile h2                  {clear:none; background:none; margin:0 0 3px; padding:0; font-size:15px; line-height:15px;}
-    div.profile p.counts            {color:#999; margin:0 0 5px; font-size:12px; line-height:12px;}
-    div.profile p.other             {font-size:12px; line-height:12px;}
-    div.profile p.description       {clear:left; color:#666;}
+    div.profile img.profile_image   {float:left; display:inline; margin:0 30px 10px 0; padding:1px; width:48px; height:48px; border:1px solid #eee;}
+    div.profile h2                  {clear:none; background:none; margin:0 0 4px; padding:0; font-size:15px; line-height:15px;}
+    div.profile p.counts            {color:#777; margin:0 0 5px; font-size:12px; line-height:12px;}
+    div.profile p.other             {color:#777; font-size:12px; line-height:12px;}
+    div.profile p.description       {clear:left; color:#777; padding:0 0 0 80px;}
   
   div.pagination                    {float:left; width:550px; margin:15px 0; text-align:center;}
   div.pagination a                  {padding:3px 7px; color:#46B546; text-decoration:none;}
