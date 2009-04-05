@@ -18,7 +18,13 @@ class StatusesController < ApplicationController
   end
   
   def create
-    tweet = current_user.client.update(params[:text])
+    options = {}
+    
+    unless params[:in_reply_to_status_id].blank?
+      options.merge!({:in_reply_to_status_id => params[:in_reply_to_status_id]})
+    end
+    
+    tweet = current_user.client.update(params[:text], options)
     flash[:notice] = "Got it! Tweet ##{tweet.id} created."
     redirect_to root_url
   end

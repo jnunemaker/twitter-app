@@ -12,7 +12,7 @@
   <div id="header_inner">
     <h3><%= link_to "I'd Tweet That", root_url %></h3>
     
-    <%- if signed_in? -%>      
+    <%- if signed_in? -%>     
       <ul id="nav">
         <li class="<%= 'active' if request.request_uri == '/' %>">
           <%= link_to 'Home', root_url %></li>
@@ -39,6 +39,7 @@
     
     <div id="update">
       <%- form_tag statuses_url, :method => :post do -%>
+        <%= hidden_field_tag 'in_reply_to_status_id' %>
         <span id="countdown">140</span>
         <label for="text">Drop a new tweet like it's hot!</label>
         <%= text_area_tag 'text' %>
