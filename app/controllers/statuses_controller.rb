@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class StatusesController < ApplicationController
   before_filter :authenticate
   before_filter :ensure_authorized
   
