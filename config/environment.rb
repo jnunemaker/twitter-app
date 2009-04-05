@@ -19,7 +19,7 @@ Rails::Initializer.run do |config|
   
   config.gem 'twitter',
     :lib => 'twitter',
-    :version => '0.5.0'
+    :version => '0.5.1'
   
   config.time_zone = 'UTC'
 end
