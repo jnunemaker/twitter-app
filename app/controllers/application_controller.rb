@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
   
   filter_parameter_logging :password, :password_confirmation
   
+  rescue_from Twitter::Unauthorized, :with => :twitter_unauthorized
+  
   private
-    def ensure_authorized
-      redirect_to new_authorization_url unless current_user.authorized?
-    end
+    def twitter_unauthorized(exception)
+      redirect_to new_authorization_url
+    end    
 end

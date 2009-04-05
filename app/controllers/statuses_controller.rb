@@ -1,6 +1,5 @@
 class StatusesController < ApplicationController
   before_filter :authenticate
-  before_filter :ensure_authorized
   
   def index
     params[:page] ||= 1
