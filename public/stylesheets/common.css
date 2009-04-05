@@ -48,6 +48,12 @@
   div.pagination span.disabled      {padding:3px 7px; text-transform:lowercase; color:#ccc;}
   div.pagination span.current       {padding:3px 5px; font-weight:bold;}
   
+  #errorExplanation                 {border:1px solid #E3BEBE; background:#F6E8E8; margin:10px 0 20px; padding:20px;}
+  #errorExplanation h2              {margin:-20px -20px 20px; background:#E3BEBE; padding:10px 20px;}
+  #errorExplanation p               {margin:0 0 20px;}
+  #errorExplanation ul              {margin:0 0 0 25px;}
+  #errorExplanation ul li           {list-style-type:disc; margin:0 0 3px; padding:0;}
+  
   #update                           {position:relative; float:left; display:inline; width:300px; margin:10px 0 20px 240px;}
   #update label                     {display:block; font-size:11px; color:#999; margin:0 0 5px;}
   #update textarea                  {width:294px; height:50px; padding:3px;}
