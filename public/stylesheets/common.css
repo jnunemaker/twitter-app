@@ -17,10 +17,9 @@
   a.icon                            {display:inline-block; background-color:#999; background-image:url(images/bg_rounded.gif); background-repeat:no-repeat; width:16px; height:16px;}
   a.icon img                        {width:16px; height:16px; margin:0; padding:0;}
   
-  div.flash                         {margin:20px 0 0; border:1px solid #ccc; background:#eee; padding:7px 13px;}
-    div.flash p                     {margin:0; padding:0;}
-    div.error                       {border:1px solid #C77474; background:#F6E8E8;}
-    div.notice                      {border:1px solid #74C774; background:#E8F6E8;}
+  div.flash                         {margin:10px 0 0 240px; padding:10px 20px; border:1px solid #ccc; background:#eee; line-height:1; font-size:12px;}
+    div.error                       {border:1px solid #E3BEBE; background:#F6E8E8;}
+    div.notice                      {border:1px solid #B9E3B9; background:#E8F6E8;}
   
   div.status                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
     div.info                        {float:left; display:inline; width:240px; margin:0; font-size:11px; text-align:right;}
@@ -55,11 +54,11 @@
     #header a:hover                 {text-decoration:underline;}
     #header h3                      {float:left; display:inline; margin:0; padding:0;}
     #header h3 a                    {display:block; font-size:12px; width:180px; padding:8px 0 8px 50px;}
+    #header h3 a:hover              {background:#555; text-decoration:none;}
     #nav                            {float:left; display:inline; margin:0; padding:0;}
     #nav li                         {float:left; list-style-type:none;}
     #nav li a                       {display:block; float:left; padding:8px 10px;}
     #nav li a:hover                 {background:#555; text-decoration:none;}
-    
     
   #content                          {float:left; display:inline; width:100%; background:#fff;}
     #content_inner                  {overflow:auto; width:550px; margin:0 auto;}
