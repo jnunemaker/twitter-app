@@ -13,14 +13,21 @@
   </p>
   
   <dl class="details">
-    <dt>location</dt>
-    <dd><%=h @user.location %></dd>
-    <dt>bio</dt>
-    <dd><%= auto_link h(@user.description) %></dd>
+    <%- unless @user.location.blank? -%>
+      <dt>location</dt>
+      <dd><%=h @user.location %></dd>
+    <%- end -%>
+    
+    <%- unless @user.description.blank? -%>
+      <dt>bio</dt>
+      <dd><%= auto_link h(@user.description) %></dd>
+    <%- end -%>
+    
     <%- unless @user.url.blank? -%>
       <dt>url</dt>
       <dd><%= link_to @user.url, @user.url %></dd>
     <%- end -%>
+    
     <dt>signup date</dt>
     <dd><%= pretty_datetime Time.parse(@user.created_at) %></dd>
   </dl>
