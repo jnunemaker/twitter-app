@@ -45,5 +45,9 @@ function log() {
 };
 
 jQuery(function($) {
-  
+  var countdown = $('#countdown');
+  var allowed = parseInt(countdown.text());
+  $('#text').keydown(function() {
+    countdown.text(allowed - $(this).val().length);
+  });
 });

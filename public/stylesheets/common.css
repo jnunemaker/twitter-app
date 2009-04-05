@@ -11,7 +11,7 @@
   form ul li                        {list-style-type:none; margin:0 0 13px; padding:0;}
   form ul li label                  {display:block; margin:0 0 3px;}
   form ul li.checkbox label         {display:inline;}
-  textarea                          {width:550px;}
+  textarea                          {width:98%;}
   
   /* Chunks */
   a.icon                            {display:inline-block; background-color:#999; background-image:url(images/bg_rounded.gif); background-repeat:no-repeat; width:16px; height:16px;}
@@ -47,6 +47,12 @@
   div.pagination a.older            {float:right;}
   div.pagination span.disabled      {padding:3px 7px; text-transform:lowercase; color:#ccc;}
   div.pagination span.current       {padding:3px 5px; font-weight:bold;}
+  
+  #update                           {position:relative; float:left; display:inline; width:300px; margin:10px 0 20px 240px;}
+  #update label                     {display:block; font-size:11px; color:#999; margin:0 0 5px;}
+  #update textarea                  {width:294px; height:50px; padding:3px;}
+  #update input                     {float:right;}
+  #update #countdown                {display:block; position:absolute; left:-240px; width:210px; padding:12px 30px 0 0; text-align:right; font-size:60px; font-weight:bold; color:#eee;}
   
   /* Layout */
   #header                           {float:left; width:100%; padding:1px 0 0; background:#333; color:#fff;}

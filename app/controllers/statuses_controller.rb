@@ -16,4 +16,10 @@ class StatusesController < ApplicationController
     params[:page] ||= 1
     @favorites = current_user.client.favorites(:page => params[:page])
   end
+  
+  def create
+    tweet = current_user.client.update(params[:text])
+    flash[:notice] = "Got it! Tweet ##{tweet.id} created."
+    redirect_to root_url
+  end
 end
