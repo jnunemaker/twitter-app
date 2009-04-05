@@ -10,12 +10,8 @@
 
 <div id="header">
   <div id="header_inner">
-    <h3><%= link_to "Twitter App", root_url %></h3>
+    <h3><%= link_to "Home", root_url %></h3>
     <%- if signed_in? -%>
-      <div class="actions">
-        <%#= link_to image_tag('reload.gif'), '#', :id => 'refresh' %>
-      </div>
-      
       <p>
         Logged in as <%= current_user.email %>
         <%= link_to 'Logout', session_url, :method => :delete %>?

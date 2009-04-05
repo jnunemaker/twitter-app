@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   filter_parameter_logging :password, :password_confirmation
+  
+  private
+    def ensure_authorized
+      redirect_to new_authorization_url unless current_user.authorized?
+    end
 end

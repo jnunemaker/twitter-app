@@ -23,7 +23,7 @@
     div.notice                      {border:1px solid #74C774; background:#E8F6E8;}
   
   div.status                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
-    div.info                        {float:left; display:inline; width:250px; margin:0; font-size:11px; text-align:right;}
+    div.info                        {float:left; display:inline; width:240px; margin:0; font-size:11px; text-align:right;}
     div.info a.profile_image        {float:right; display:block; margin:0 30px;}
     div.info a.profile_image img    {float:left; width:48px; height:48px; border:1px solid #ddd; padding:1px;}
     div.info a.profile_image:hover  {background:none;}
@@ -31,7 +31,7 @@
     div.info span.date              {color:#aaa;}
     div.text                        {float:left; display:inline; width:300px;}
   
-  div.profile                       {float:left; width:550px; border-bottom:1px solid #eee; margin:0 0 0 170px; padding:15px 0;}
+  div.profile                       {float:left; width:380px; border-bottom:1px solid #eee; margin:0 0 0 170px; padding:15px 0;}
     div.profile a.icon              {float:right;}
     div.profile p                   {margin:0; padding:0;}
     div.profile img.profile_image   {float:left; display:inline; margin:0 30px 10px 0; padding:1px; width:48px; height:48px; border:1px solid #eee;}
@@ -40,9 +40,11 @@
     div.profile p.other             {color:#777; font-size:12px; line-height:12px;}
     div.profile p.description       {clear:left; color:#777; padding:0 0 0 80px;}
   
-  div.pagination                    {float:left; width:550px; margin:15px 0; text-align:center;}
-  div.pagination a                  {padding:3px 7px; color:#46B546; text-decoration:none;}
+  div.pagination                    {float:left; width:550px; margin:15px 0;}
+  div.pagination a                  {float:left; display:block; padding:3px 7px; color:#46B546; text-decoration:none;}
   div.pagination a:hover            {color:#fff; background:#090;}
+  div.pagination a.newer            {float:left;}
+  div.pagination a.older            {float:right;}
   div.pagination span.disabled      {padding:3px 7px; text-transform:lowercase; color:#ccc;}
   div.pagination span.current       {padding:3px 5px; font-weight:bold;}
   
@@ -51,17 +53,13 @@
   #header_inner                     {width:550px; margin:0 auto;}
     #header a                       {color:#fff; text-decoration:none; background:none;}
     #header a:hover                 {text-decoration:underline;}
-    #header h3                      {float:left; display:inline; margin:0; padding:0; line-height:12px;}
+    #header h3                      {float:left; display:inline; margin:0 0 0 240px; padding:0; line-height:12px;}
     #header h3 a                    {display:block; font-size:12px;}
     #header p                       {float:left; display:inline; margin:0; padding:0 0 0 13px; font-size:11px; color:#ccc; line-height:12px;}
     #header p a                     {color:#ccc;}
-    #header div.actions             {float:right; margin:-7px 0;}
-    #header div.actions a           {float:left; display:block; margin:0 0 0 10px; padding:5px;}
-    #header div.actions a:hover     {background:#444;}
-    #header div.actions img         {float:right;}
                                     
   #content                          {float:left; display:inline; width:100%; background:#fff;}
-    #content_inner                  {width:550px; margin:0 auto;}
+    #content_inner                  {overflow:auto; width:550px; margin:0 auto;}
     
   #footer                           {float:left; display:inline; width:100%; padding:30px 0 0; background:#eee; border-top:1px solid #ccc;}
     #footer_inner                   {width:550px; margin:0 auto;}
