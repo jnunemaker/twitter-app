@@ -9,7 +9,7 @@ module ApplicationHelper
     content_tag(:span, date, :class => 'date') + " " + content_tag(:span, time, :class => 'time')
   end
   
-  def linkup_replies(text)    
+  def linkup_mentions(text)    
     text.gsub!(/@([\w]+)(\W)?/, '@<a href="/users/\1">\1</a>\2')
     text
   end

@@ -7,8 +7,8 @@ class StatusesController < ApplicationController
     @tweets = current_user.client.friends_timeline(:page => params[:page])
   end
   
-  def replies
+  def mentions
     params[:page] ||= 1
-    @replies = current_user.client.replies(:page => params[:page])
+    @mentions = current_user.client.replies(:page => params[:page])
   end
 end

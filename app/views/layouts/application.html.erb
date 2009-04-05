@@ -11,11 +11,15 @@
 <div id="header">
   <div id="header_inner">
     <h3><%= link_to "I'd Tweet That", root_url %></h3>
+    
     <%- if signed_in? -%>      
       <ul id="nav">
-        <li><%= link_to 'Home', root_url %></li>
-        <li><%= link_to 'Replies', replies_statuses_url %></li>
-        <li><%= link_to 'Logout', session_url, :method => :delete %></li>
+        <li class="<%= 'active' if request.request_uri == '/' %>">
+          <%= link_to 'Home', root_url %></li>
+        <li class="<%= 'active' if controller.action_name == 'mentions' %>">
+          <%= link_to 'Mentions', mentions_statuses_url %></li>
+        <li>
+          <%= link_to 'Logout', session_url, :method => :delete %></li>
       </ul>
     <%- end -%>
   </div>

@@ -59,6 +59,7 @@
     #nav li                         {float:left; list-style-type:none;}
     #nav li a                       {display:block; float:left; padding:8px 10px;}
     #nav li a:hover                 {background:#555; text-decoration:none;}
+    #nav li.active a                {background:#fff; color:#333;}
     
   #content                          {float:left; display:inline; width:100%; background:#fff;}
     #content_inner                  {overflow:auto; width:550px; margin:0 auto;}
