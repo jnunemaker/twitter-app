@@ -18,6 +18,10 @@
           <%= link_to 'Home', root_url %></li>
         <li class="<%= 'active' if controller.action_name == 'mentions' %>">
           <%= link_to 'Mentions', mentions_statuses_url %></li>
+        <li class="<%= 'active' if controller.controller_name == 'direct_messages' %>">
+          <%= link_to "DM", direct_messages_url %></li>
+        <li class="<%= 'active' if controller.action_name == 'favorites' %>">
+          <%= link_to 'Favs', favorites_statuses_url %></li>
         <li>
           <%= link_to 'Logout', session_url, :method => :delete %></li>
       </ul>

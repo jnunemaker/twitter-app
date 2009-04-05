@@ -1,23 +1,29 @@
 <div class="profile">  
-  <%= image_tag(@user.profile_image_url, :class => 'profile_image') %>
+  <%#= image_tag(@user.profile_image_url, :class => 'profile_image') %>
   
   <h2>
     <%=h @user.name %> (<%=h @user.screen_name %>)
   </h2>
   
   <p class="counts">
-    <%= pluralize @user.friends_count, 'Friend', 'Friends' %> //    
-    <%= pluralize @user.followers_count, 'Follower', 'Followers' %> // 
-    <%= pluralize @user.statuses_count, 'Update', 'Updates' %> //
-    <%= pluralize @user.favourites_count, 'Favorite', 'Favorites' %>
+    <%= pluralize @user.friends_count, 'friend', 'friends' %> //    
+    <%= pluralize @user.followers_count, 'follower', 'followers' %> // 
+    <%= pluralize @user.statuses_count, 'tweet', 'tweets' %> //
+    <%= pluralize @user.favourites_count, 'fav', 'favs' %>
   </p>
   
-  <p class="other">
-    <%=h @user.location %>
-    <%= link_to('web', @user.url) unless @user.url.blank? %>
-  </p>
-  
-  <p class="description"><%= auto_link h(@user.description) %></p>
+  <dl class="details">
+    <dt>location</dt>
+    <dd><%=h @user.location %></dd>
+    <dt>bio</dt>
+    <dd><%= auto_link h(@user.description) %></dd>
+    <%- unless @user.url.blank? -%>
+      <dt>url</dt>
+      <dd><%= link_to @user.url, @user.url %></dd>
+    <%- end -%>
+    <dt>signup date</dt>
+    <dd><%= pretty_datetime Time.parse(@user.created_at) %></dd>
+  </dl>
 </div>
 
 <div id="statuses">

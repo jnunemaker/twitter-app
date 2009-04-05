@@ -1,0 +1,7 @@
+<div id="statuses">
+  <%- for message in @direct_messages -%>
+    <%= render :partial => 'statuses/status', :object => message %>
+  <%- end -%>
+</div>
+
+<%= render :partial => "statuses/pagination" %>

@@ -11,4 +11,9 @@ class StatusesController < ApplicationController
     params[:page] ||= 1
     @mentions = current_user.client.replies(:page => params[:page])
   end
+  
+  def favorites
+    params[:page] ||= 1
+    @favorites = current_user.client.favorites(:page => params[:page])
+  end
 end
