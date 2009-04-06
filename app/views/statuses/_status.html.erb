@@ -1,7 +1,7 @@
 <%- user = status.user.blank? ? status.sender : status.user -%>
 <div id="status_<%= status.id %>" class="status">
   <div class="info">
-    <%= link_to image_tag(user.profile_image_url), '#', :class => 'profile_image' %>
+    <%= link_to image_tag(user.profile_image_url), user_url(user.screen_name), :class => 'profile_image' %>
     
     <p class="who_when">
       <%= link_to h(user.screen_name), user_url(user.screen_name) %><br />
