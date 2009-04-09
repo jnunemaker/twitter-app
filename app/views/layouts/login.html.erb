@@ -16,12 +16,7 @@
 
 <div id="content">
   <div id="content_inner">    
-    <% flash.each do |key, value| -%>
-      <div class="flash <%= key %>">
-        <%= html_escape(value) %>
-      </div>
-    <% end -%>
-    
+    <%= display_flash_message %>
     <%= yield %>
   </div>
 </div>

@@ -25,6 +25,6 @@ class StatusesController < ApplicationController
     
     tweet = current_user.client.update(params[:text], options)
     flash[:notice] = "Got it! Tweet ##{tweet.id} created."
-    redirect_to root_url
+    return_to_or root_url
   end
 end

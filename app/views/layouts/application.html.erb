@@ -31,14 +31,11 @@
 
 <div id="content">
   <div id="content_inner">    
-    <% flash.each do |key, value| -%>
-      <div class="flash <%= key %>">
-        <%= html_escape(value) %>
-      </div>
-    <% end -%>
+    <%= display_flash_message %>
     
     <div id="update">
       <%- form_tag statuses_url, :method => :post do -%>
+        <%= hidden_return_to_current %>
         <%= hidden_field_tag 'in_reply_to_status_id' %>
         <span id="countdown">140</span>
         <label for="text">Drop a new tweet like it's hot!</label>
