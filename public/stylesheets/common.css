@@ -77,7 +77,7 @@
     #nav li.active a                {background:#fff; color:#333;}
     
   #content                          {float:left; display:inline; width:100%; background:#fff;}
-    #content_inner                  {overflow:auto; width:550px; margin:0 auto;}
+    #content_inner                  {width:550px; margin:0 auto;}
     
   #footer                           {float:left; display:inline; width:100%; padding:30px 0 0; background:#eee; border-top:1px solid #ccc;}
     #footer_inner                   {width:550px; margin:0 auto;}
