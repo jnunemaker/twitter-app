@@ -1,4 +1,17 @@
 <div class="profile">
+  <div class="follow_form">
+    <%- if @user.following -%>
+      <%- form_tag friendship_url(:id => @user.screen_name), :method => :delete do -%>
+        <%= submit_tag 'Stop Following', :disable_with => 'Please Wait...' %>
+      <%- end -%>
+    <%- else -%>
+      <%- form_tag friendships_url do -%>
+        <%= hidden_field_tag 'user', @user.screen_name %>
+        <%= submit_tag 'Follow', :disable_with => 'Please Wait...' %>
+      <%- end -%>
+    <%- end -%>
+  </div>
+  
   <h2>
     <%=h @user.name %> (<%=h @user.screen_name %>)
   </h2>
