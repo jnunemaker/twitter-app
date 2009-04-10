@@ -31,4 +31,16 @@ class StatusesController < ApplicationController
     flash[:notice] = "Got it! Tweet ##{tweet.id} created."
     return_to_or root_url
   end
+  
+  def fav
+    flash[:notice] = "Tweet fav'd. May not show up right away due to API latency."
+    current_user.client.favorite_create(params[:id])
+    return_to_or root_url
+  end
+  
+  def unfav
+    flash[:notice] = "Tweet unfav'd. May not show up right away due to API latency."
+    current_user.client.favorite_destroy(params[:id])
+    return_to_or root_url
+  end
 end
