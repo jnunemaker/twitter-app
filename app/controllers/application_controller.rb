@@ -2,6 +2,8 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  layout :determine_layout
+  
   include Clearance::App::Controllers::ApplicationController
   helper :all
   protect_from_forgery
@@ -14,4 +16,8 @@ class ApplicationController < ActionController::Base
     def twitter_unauthorized(exception)
       redirect_to new_authorization_url
     end    
+    
+    def determine_layout
+      signed_in? ? 'application' : 'login'
+    end
 end
