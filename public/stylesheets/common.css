@@ -24,6 +24,7 @@
   
   div.status                        {float:left; display:inline; width:550px; border-bottom:1px solid #eee; padding:15px 0;}
     div.info                        {float:left; display:inline; width:240px; margin:0; font-size:11px; text-align:right;}
+    div.info span.followers_count   {color:#999; position:relative; top:-4px; margin-right:3px;}
     div.info a.profile_image        {float:right; display:block; margin:0 30px;}
     div.info a.profile_image img    {float:left; width:48px; height:48px; border:1px solid #ddd; padding:1px;}
     div.info a.profile_image:hover  {background:none;}

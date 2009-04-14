@@ -9,6 +9,7 @@
     </p>
     
     <p class="actions">
+      <span title="# of followers" class="followers_count"><%= user.followers_count %></span>
       <%= link_to image_tag('chat.gif'), status_url(:id => status.in_reply_to_status_id), :class => 'icon' unless status.in_reply_to_status_id.blank? %>
       
       <%- if status.favorited -%>
