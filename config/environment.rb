@@ -17,9 +17,7 @@ Rails::Initializer.run do |config|
     :source => 'http://gems.github.com',
     :version => '2.3.8'
   
-  config.gem 'twitter',
-    :lib => 'twitter',
-    :version => '0.6.6'
+  config.gem 'twitter', :version => '0.6.15'
   
   config.time_zone = 'UTC'
 end
