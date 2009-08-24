@@ -2,12 +2,12 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  include Twitter::AuthenticationHelpers
+  
   layout :determine_layout
-  
-  include Clearance::App::Controllers::ApplicationController
   helper :all
-  protect_from_forgery
   
+  protect_from_forgery
   filter_parameter_logging :password, :password_confirmation
   
   rescue_from Twitter::Unauthorized, :with => :initiate_oauth_request

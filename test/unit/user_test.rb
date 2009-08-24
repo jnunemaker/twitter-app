@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id          :integer(4)      not null, primary key
+#  email       :string(255)
+#  atoken      :string(255)
+#  asecret     :string(255)
+#  screen_name :string(30)
+#
+
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase

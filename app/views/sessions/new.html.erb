@@ -1,25 +1,8 @@
 <div id="login">
-  <h2>Sign in</h2>
+  <h2>Sign In With Twitter</h2>
+  <p>Since this is a twitter app, go ahead and sign in with twitter.</p>
   
-  <% form_for :session, :url => session_path do |form| %>
-    <ul>
-      <li>
-        <%= form.label :email %>
-        <%= form.text_field :email %>
-      </li>
-      <li>
-        <%= form.label :password %>
-        <%= form.password_field :password %> 
-        <%= link_to "Forgot password?", new_password_path %>
-      </li>
-      <li class="checkbox">
-        <%= form.check_box :remember_me %>
-        <%= form.label :remember_me %>
-      </li>
-      <li class="submit">
-        <%= form.submit "Sign in", :disable_with => "Please wait..." %> or
-        <%= link_to "Sign up", new_user_path %>
-      </li>
-    </ul>
-  <% end %>
+  <%- form_tag session_path do -%>
+    <p><%= image_submit_tag 'twitter_sign_in.png' %></p>
+  <%- end -%>
 </div>
