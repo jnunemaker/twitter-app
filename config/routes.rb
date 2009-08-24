@@ -10,5 +10,4 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resource :session
   map.finalize_session 'session/finalize', :controller => 'sessions', :action => 'finalize'
-  map.resource :authorization
 end

@@ -4,20 +4,16 @@
 class ApplicationController < ActionController::Base
   include Twitter::AuthenticationHelpers
   
-  layout :determine_layout
   helper :all
-  
   protect_from_forgery
   filter_parameter_logging :password, :password_confirmation
   
-  rescue_from Twitter::Unauthorized, :with => :initiate_oauth_request
+  rescue_from Twitter::Unauthorized, :with => :force_sign_in
   
   private
-    def initiate_oauth_request(exception)
-      redirect_to new_authorization_url
-    end    
-    
-    def determine_layout
-      signed_in? ? 'application' : 'login'
+    def force_sign_in(exception)
+      reset_session
+      flash[:error] = 'Seems your credentials are not good anymore. Please sign in again.'
+      redirect_to new_session_path
     end
 end

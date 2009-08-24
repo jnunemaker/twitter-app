@@ -11,9 +11,7 @@
 
 require 'test_helper'
 
-class UserTest < ActiveSupport::TestCase
-  include Clearance::Test::Unit::UserTest
-  
+class UserTest < ActiveSupport::TestCase  
   should_allow_mass_assignment_of :atoken
   should_allow_mass_assignment_of :asecret
   

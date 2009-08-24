@@ -3,10 +3,9 @@ class SessionsController < ApplicationController
   end
   
   def create
-    oauth = Twitter::OAuth.new(ConsumerConfig['token'], ConsumerConfig['secret'], :sign_in => true)
     oauth.set_callback_url(finalize_session_url)
     
-    session['rtoken'] = oauth.request_token.token
+    session['rtoken']  = oauth.request_token.token
     session['rsecret'] = oauth.request_token.secret
     
     redirect_to oauth.request_token.authorize_url
@@ -18,16 +17,13 @@ class SessionsController < ApplicationController
   end
   
   def finalize
-    oauth = Twitter::OAuth.new(ConsumerConfig['token'], ConsumerConfig['secret'], :sign_in => true)
     oauth.authorize_from_request(session['rtoken'], session['rsecret'], params[:oauth_verifier])
     
-    session['rtoken'] = nil
+    session['rtoken']  = nil
     session['rsecret'] = nil
     
-    tweep = Twitter::Base.new(oauth).verify_credentials
-    logger.info "\n\n" + tweep.inspect + "\n\n"
-    
-    user = User.find_or_create_by_screen_name(tweep.screen_name)
+    profile = Twitter::Base.new(oauth).verify_credentials
+    user    = User.find_or_create_by_screen_name(profile.screen_name)
     
     user.update_attributes({
       :atoken => oauth.access_token.token, 
@@ -35,6 +31,11 @@ class SessionsController < ApplicationController
     })
     
     sign_in(user)
-    redirect_to root_path
+    redirect_back_or root_path
   end
+  
+  private
+    def oauth
+      @oauth ||= Twitter::OAuth.new(ConsumerConfig['token'], ConsumerConfig['secret'], :sign_in => true)
+    end
 end

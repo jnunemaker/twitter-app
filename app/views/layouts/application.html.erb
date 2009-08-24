@@ -5,6 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Twitter App</title>
     <%= stylesheet_link_tag 'common' %>
+    <%= stylesheet_link_tag 'login' unless signed_in? %>
+    
+    <%= javascript_include_tag 'jquery' %>
+    <%= javascript_include_tag 'jquery.form.js' %>
+    <%= javascript_include_tag 'application' %>
 </head>
 <body>
 <div id="header">
@@ -32,16 +37,18 @@
   <div id="content_inner">    
     <%= display_flash_message %>
     
-    <div id="update">
-      <%- form_tag statuses_url, :method => :post do -%>
-        <%= hidden_return_to_current %>
-        <%= hidden_field_tag 'in_reply_to_status_id' %>
-        <span id="countdown">140</span>
-        <label for="text">Drop a new tweet like it's hot!</label>
-        <%= text_area_tag 'text' %>
-        <%= submit_tag 'Update' %>
-      <%- end -%>
-    </div>
+    <%- if signed_in? -%>
+      <div id="update">
+        <%- form_tag statuses_url, :method => :post do -%>
+          <%= hidden_return_to_current %>
+          <%= hidden_field_tag 'in_reply_to_status_id' %>
+          <span id="countdown">140</span>
+          <label for="text">Drop a new tweet like it's hot!</label>
+          <%= text_area_tag 'text' %>
+          <%= submit_tag 'Update' %>
+        <%- end -%>
+      </div>
+    <%- end -%>
     
     <%= yield %>
   </div>
@@ -56,9 +63,5 @@
     </div>
   </div>
 </div>
-
-<%= javascript_include_tag 'jquery' %>
-<%= javascript_include_tag 'jquery.form.js' %>
-<%= javascript_include_tag 'application' %>
 </body>
 </html>
