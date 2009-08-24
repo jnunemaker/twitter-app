@@ -27,6 +27,8 @@ class User < ActiveRecord::Base
     @oauth ||= Twitter::OAuth.new(ConsumerConfig['token'], ConsumerConfig['secret'])
   end
   
+  delegate :request_token, :access_token, :authorize_from_request, :to => :oauth
+  
   def client
     @client ||= begin
       oauth.authorize_from_access(atoken, asecret)

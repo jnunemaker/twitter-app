@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
   
   filter_parameter_logging :password, :password_confirmation
   
-  rescue_from Twitter::Unauthorized, :with => :twitter_unauthorized
+  rescue_from Twitter::Unauthorized, :with => :initiate_oauth_request
   
   private
-    def twitter_unauthorized(exception)
+    def initiate_oauth_request(exception)
       redirect_to new_authorization_url
     end    
     
