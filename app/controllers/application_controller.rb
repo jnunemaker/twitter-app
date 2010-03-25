@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
       oauth.authorize_from_access(session[:atoken], session[:asecret])
       Twitter::Base.new(oauth)
     end
+    helper_method :client
 
     def force_sign_in(exception)
       reset_session
