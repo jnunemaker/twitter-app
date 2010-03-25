@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   private
     def oauth
-      @oauth ||= Twitter::OAuth.new(ConsumerConfig['token'], ConsumerConfig['secret'], :sign_in => true)
+      @oauth ||= Twitter::OAuth.new(ConsumerToken, ConsumerSecret, :sign_in => true)
     end
 
     def client
