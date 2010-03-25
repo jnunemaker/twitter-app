@@ -8,7 +8,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem 'twitter', :version => '0.9.1'
-  config.gem 'mongo_mapper', :version => '0.7.1'
   config.frameworks -= [:active_record, :active_resource]
   config.time_zone = 'UTC'
 end

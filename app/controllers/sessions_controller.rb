@@ -18,21 +18,13 @@ class SessionsController < ApplicationController
 
   def finalize
     oauth.authorize_from_request(session['rtoken'], session['rsecret'], params[:oauth_verifier])
-    session['rtoken'] = session['rsecret'] = nil
 
     profile = Twitter::Base.new(oauth).verify_credentials
-    user    = User.first_or_new(:screen_name => profile.screen_name)
-    user.update_attributes({
-      :atoken => oauth.access_token.token,
-      :asecret => oauth.access_token.secret,
-    })
+    session['rtoken'] = session['rsecret'] = nil
+    session[:atoken] = oauth.access_token.token
+    session[:asecret] = oauth.access_token.secret
 
-    sign_in(user)
+    sign_in(profile)
     redirect_back_or root_path
   end
-
-  private
-    def oauth
-      @oauth ||= Twitter::OAuth.new(ConsumerConfig['token'], ConsumerConfig['secret'], :sign_in => true)
-    end
 end

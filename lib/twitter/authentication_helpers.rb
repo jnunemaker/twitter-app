@@ -2,7 +2,7 @@ module Twitter
   module AuthenticationHelpers
     def self.included(controller)
       controller.send :include, InstanceMethods
-      
+
       controller.class_eval do
         helper_method :current_user
         helper_method :signed_in?
@@ -10,14 +10,10 @@ module Twitter
         hide_action :current_user, :signed_in?
       end
     end
-    
-    module InstanceMethods
-      def current_user
-        @_current_user ||= user_from_session
-      end
 
+    module InstanceMethods
       def signed_in?
-        !current_user.nil?
+        !session[:screen_name].nil?
       end
 
       protected
@@ -25,16 +21,8 @@ module Twitter
           deny_access unless signed_in?
         end
 
-        def user_from_session
-          if session[:user_id].present?
-            User.find_by_id(session[:user_id])
-          end
-        end
-
-        def sign_in(user)
-          if user
-            session[:user_id] = user.id
-          end
+        def sign_in(profile)
+          session[:screen_name] = profile.screen_name if profile
         end
 
         def redirect_back_or(default)
