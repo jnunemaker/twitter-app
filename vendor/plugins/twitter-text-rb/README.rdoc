@@ -1,0 +1,66 @@
+== twitter-text
+
+A gem that provides text processing routines for Twitter Tweets. The major
+reason for this is to unify the various auto-linking and extraction of
+usernames, lists, hashtags and URLs.
+
+== Extraction Examples
+
+  # Extraction
+  class MyClass
+    include TwitterText::Extractor
+    usernames = extract_mentioned_screen_names("Mentioning @twitter and @jack")
+    # usernames = ["twitter", "jack"]
+  end
+
+  # Extraction with a block argument
+  class MyClass
+    include TwitterText::Extractor
+    extract_reply_screen_name("@twitter are you hiring?").do |username|
+      # username = "twitter"
+    end
+  end
+
+== Auto-linking Examples
+
+  # Auto-link
+  class MyClass
+    include TwitterText::Autolink
+    
+    html = auto_link("link @user, please #request")
+  end
+
+=== Usernames
+
+Username extraction and linking matches all valid Twitter usernames but does
+not verify that the username is a valid Twitter account.
+
+=== Lists
+
+Auto-link and extract list names when they are written in @user/list-name
+format.
+
+=== Hashtags
+
+Auto-link and extract hashtags, where a hashtag contains any latin letter or
+number but cannot be solely numbers.
+
+=== URLs
+
+Auto-linking and extraction of URLs differs from the Rails default so that it
+will work correctly in Tweets written in languages that do not include spaces
+between words.
+
+=== International
+
+Special care has been taken to be sure that auto-linking and extraction work
+in Tweets of all languages. This means that languages without spaces between
+words should work equally well.
+
+=== Conformance
+
+To run the Conformance suite, you'll need to add that project as a git submodule.  From the root twitter-text-rb directory, run:
+
+  git submodule add git@github.com:mzsanford/twitter-text-conformance.git test/twitter-text-conformance/
+  git submodule init
+  git submodule update

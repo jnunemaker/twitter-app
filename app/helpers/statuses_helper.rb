@@ -1,9 +1,4 @@
 module StatusesHelper
-  def linkup_mentions(text)    
-    text.gsub!(/@([\w]+)(\W)?/, '@<a href="/users/\1">\1</a>\2')
-    text
-  end
-  
   def pretty_datetime(datetime)
     date = datetime.strftime('%b %e, %Y').downcase
     time = datetime.strftime('%l:%M%p').downcase

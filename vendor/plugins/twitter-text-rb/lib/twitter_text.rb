@@ -1,0 +1,1 @@
+require 'twitter_text/twitter-text'
