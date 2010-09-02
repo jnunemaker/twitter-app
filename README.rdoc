@@ -1,3 +1,5 @@
 = twitter app
 
 Twitter app is a basic rails 2.3 application that shows how to use the updated twitter gem to handle oauth stuff. It is really basic, but over time I'll keep pimping it out until it is my primary twitter client (at least that is the goal).
+
+NOTE: To test locally you need to run the app without ports, for that, it's as simple as "sudo script/server -p 80" and you can call the app with 'sudo TWITTER_TOKEN="your_token" TWITTER_SECRET="your_secret" script/server -p 80' to have the environment variables passed.
