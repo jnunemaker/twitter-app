@@ -1,7 +1,0 @@
-<div id="statuses">
-  <%- for tweet in @tweets -%>
-    <%= render :partial => 'statuses/status', :object => tweet %>
-  <%- end -%>
-</div>
-
-<%= render :partial => "pagination" %>
