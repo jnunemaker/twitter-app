@@ -4,7 +4,13 @@ TwitterApp is a very basic Rails 3 application that demonstrates how to use the 
 
 Installation
 ------------
-    $ git clone git://github.com/jnunemaker/twitter-app.git
-    $ cd twitter-app
-    $ bundle install
-    $ CONSUMER_KEY=xyz CONSUMER_SECRET=123 rails server
+    git clone git://github.com/jnunemaker/twitter-app.git
+    cd twitter-app
+    bundle install
+
+Usage
+-----
+Using TwitterApp requires you to [register an app with Twitter](http://dev.twitter.com/apps) to obtain OAuth credentials.
+Once you obtain credentials, substitute your consumer key and secret into the command below.
+
+    CONSUMER_KEY=xyz CONSUMER_SECRET=123 rails server
