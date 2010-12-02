@@ -1,0 +1,45 @@
+<% if signed_in? %>
+  <%= image_tag(@user.profile_image_url).html_safe %>
+  <h3>
+    Welcome <%= link_to(@user.name, @user.url) %>
+  </h3>
+  <table>
+    <tr>
+      <th>
+        Location
+      </th>
+      <td>
+        <%= @user.location %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Friends
+      </th>
+      <td>
+        <%= @user.friends_count %>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        Followers
+      </th>
+      <td>
+        <%= @user.followers_count %>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <%= "#{time_ago_in_words(@user.status.created_at).capitalize} ago, you said:" %>
+    <q>
+      <%= @user.status.text %>
+    </q>
+  </p>
+  <%= form_tag('/sessions/destroy', :method => :delete) do %>
+    <%= submit_tag 'Sign out' %>
+  <% end %>
+<% else %>
+  <%= form_tag('/sessions') do %>
+    <%= image_submit_tag("sign-in-with-twitter.png") %>
+  <% end %>
+<% end %>

@@ -1,0 +1,10 @@
+TwitterApp
+==========
+TwitterApp is a very basic Rails 3 application that demonstrates how to use the [Sign in with Twitter](http://dev.twitter.com/pages/sign_in_with_twitter) workflow with version 1.0 of the [twitter gem](https://github.com/jnunemaker/twitter/) (which has removed built-in OAuth support).
+
+Installation
+------------
+    $ git clone git://github.com/jnunemaker/twitter-app.git
+    $ cd twitter-app
+    $ bundle install
+    $ CONSUMER_KEY=xyz CONSUMER_SECRET=123 rails server
