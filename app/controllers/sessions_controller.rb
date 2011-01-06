@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    @user = client.user(session[:screen_name]) if signed_in?
+    @user = client.user if signed_in?
   end
 
   def create
