@@ -101,6 +101,10 @@ GEM
     webmock (1.6.1)
       addressable (>= 2.2.2)
       crack (>= 0.1.7)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
 
 PLATFORMS
   java
@@ -113,3 +117,4 @@ DEPENDENCIES
   rspec-rails
   twitter (~> 1.1.0)
   webmock
+  webrat
