@@ -50,7 +50,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     multi_json (0.0.5)
-    multi_xml (0.2.0)
+    multi_xml (0.2.1)
     multipart-post (1.1.0)
     nokogiri (1.4.4)
     nokogiri (1.4.4-java)
