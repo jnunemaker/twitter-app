@@ -119,6 +119,6 @@ DEPENDENCIES
   rails (= 3.0.3)
   rspec
   rspec-rails
-  twitter (~> 1.1.0)
+  twitter (~> 1.1.2)
   webmock
   webrat
