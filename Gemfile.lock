@@ -28,7 +28,7 @@ GEM
       activemodel (= 3.0.6)
       activesupport (= 3.0.6)
     activesupport (3.0.6)
-    addressable (2.2.4)
+    addressable (2.2.5)
     arel (2.0.9)
     builder (2.1.2)
     crack (0.1.8)
