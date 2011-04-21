@@ -95,8 +95,8 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    twitter (1.3.0)
-      faraday (~> 0.6.0)
+    twitter (1.4.0)
+      faraday (~> 0.6.1)
       faraday_middleware (~> 0.6.3)
       hashie (~> 1.0.0)
       multi_json (~> 0.0.5)
@@ -122,6 +122,6 @@ DEPENDENCIES
   rails (~> 3.0.7)
   rspec
   rspec-rails
-  twitter (~> 1.3.0)
+  twitter (~> 1.4.0)
   webmock
   webrat
