@@ -49,7 +49,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    multi_json (0.0.5)
+    multi_json (1.0.0)
     multi_xml (0.2.2)
     multipart-post (1.1.0)
     nokogiri (1.4.4)
@@ -95,11 +95,11 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    twitter (1.4.0)
+    twitter (1.4.1)
       faraday (~> 0.6.1)
       faraday_middleware (~> 0.6.3)
       hashie (~> 1.0.0)
-      multi_json (~> 0.0.5)
+      multi_json (~> 1.0.0)
       multi_xml (~> 0.2.0)
       rash (~> 0.3.0)
       simple_oauth (~> 0.1.4)
@@ -122,6 +122,6 @@ DEPENDENCIES
   rails (~> 3.0.7)
   rspec
   rspec-rails
-  twitter (~> 1.4.0)
+  twitter (~> 1.4.1)
   webmock
   webrat
