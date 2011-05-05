@@ -4,6 +4,7 @@
     Welcome <%= link_to(@user.name, @user.url) %>
   </h3>
   <table>
+    <% unless @user.location.blank? %>
     <tr>
       <th>
         Location
@@ -12,6 +13,7 @@
         <%= @user.location %>
       </td>
     </tr>
+    <% end %>
     <tr>
       <th>
         Friends
@@ -29,12 +31,14 @@
       </td>
     </tr>
   </table>
+  <% unless @user.status.blank? %>
   <p>
     <%= "#{time_ago_in_words(@user.status.created_at).capitalize} ago, you said:" %>
     <q>
       <%= @user.status.text %>
     </q>
   </p>
+  <% end %>
   <%= form_tag('/sessions/destroy', :method => :delete) do %>
     <%= submit_tag 'Sign out' %>
   <% end %>
