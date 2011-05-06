@@ -1,5 +1,4 @@
 .bundle
-*.rbc
 db/*.sqlite3
 log/*.log
-tmp/**/*
+tmp/
