@@ -23,8 +23,8 @@ below.
 
 OmniAuth
 --------
-There is an [omniauth
-branch](https://github.com/jnunemaker/twitter-app/tree/omniauth) that
-demonstrates integration with the [omniauth
-gem](https://github.com/intridea/omniauth) instead of the [oauth
-gem](https://github.com/oauth/oauth-ruby).
+If you would like to see how to use the [omniauth
+gem](https://github.com/intridea/omniauth) for authentication, Erik
+Michaels-Ober maintains [a simple Rails
+application](https://github.com/sferik/sign-in-with-twitter) that demonstrates
+how to do so.
